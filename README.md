@@ -2,6 +2,10 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This project showcases my skills, projects, and provides a way for potential employers or clients to get in touch.
 
+## 🚀 Live Demo
+
+[View Portfolio Live →](https://your-live-demo-link.com)
+
 ## 🚀 Features
 
 - **Responsive Design**: Optimized for all device sizes

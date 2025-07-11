@@ -11,6 +11,7 @@ const About = () => {
     { name: 'Node.js', level: 80, color: 'from-green-400 to-emerald-500' },
     { name: 'UI/UX Design', level: 85, color: 'from-purple-400 to-pink-500' },
     { name: 'Git/GitHub', level: 88, color: 'from-gray-400 to-gray-600' },
+    { name: 'MySQL', level: 75, color: 'from-blue-300 to-blue-500' }, // Added MySQL
   ];
 
   const highlights = [

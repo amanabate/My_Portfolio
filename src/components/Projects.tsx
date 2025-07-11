@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Filter } from 'lucide-react';
+import { SiLeetcode } from 'react-icons/si';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
@@ -45,35 +45,26 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop',
       tech: ['React', 'Framer Motion', 'Tailwind'],
       category: 'Frontend',
-      github: 'https://github.com/amanabate/MyPorto',
-      demo: 'https://github.com/amanabate/MyPorto',
+      github: 'https://github.com/amanabate/My_Portfolio',
+      demo: 'https://github.com/amanabate/My_Portfolio',
       featured: false,
-    },
-    {
-      id: 5,
-      title: 'Blog CMS',
-      description: 'Content management system for blogs with rich text editor and SEO optimization.',
-      image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-      tech: ['Next.js', 'Sanity', 'TypeScript'],
-      category: 'Full Stack',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true,
     },
     {
       id: 6,
-      title: 'Fitness Tracker',
-      description: 'Mobile-responsive fitness tracking app with charts and progress monitoring.',
-      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
-      tech: ['React Native', 'Chart.js', 'Redux'],
-      category: 'Mobile',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
+      title: 'Problem Solve',
+      description: 'A collection of competitive programming and algorithmic problem solutions on LeetCode.',
+      image: '', // Remove the broken LeetCode logo as the main image
+      backgroundImage: 'url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop)', // Example background image
+      tech: ['LeetCode'],
+      category: 'Competitive Programming Practice',
+      github: 'https://leetcode.com/u/Amanuel-Abate-Horeta/',
+      demo: 'https://leetcode.com/u/Amanuel-Abate-Horeta/',
       featured: false,
+      icon: SiLeetcode,
     },
   ];
 
-  const categories = ['All', 'Frontend', 'Full Stack', 'Mobile'];
+  const categories = ['All', 'Frontend', 'Full Stack', 'Competitive Programming Practice'];
 
   const filteredProjects = filter === 'All' 
     ? projects 
@@ -133,85 +124,122 @@ const Projects = () => {
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
                 className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                style={project.backgroundImage ? { backgroundImage: project.backgroundImage, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                  />
-                  {project.featured && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Featured
+                {project.backgroundImage ? (
+                  <>
+                    <div style={{ width: '100%', height: '12rem', backgroundImage: project.backgroundImage, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+                    <div className="p-6 bg-gray-900 dark:bg-gray-900">
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-400 mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-400 font-medium">
+                          {project.category}
+                        </span>
+                        <div className="flex space-x-3">
+                          <motion.a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1 }}
+                            className="text-blue-400 hover:text-blue-300"
+                          >
+                            <ExternalLink size={18} />
+                          </motion.a>
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1 }}
+                            className="text-gray-400 hover:text-gray-300"
+                          >
+                            {project.icon ? (
+                              <project.icon size={18} />
+                            ) : (
+                              <Github size={18} />
+                            )}
+                          </motion.a>
+                        </div>
+                      </div>
                     </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                    <div className="flex space-x-4">
-                      <motion.a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-                      >
-                        <ExternalLink size={20} />
-                      </motion.a>
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors"
-                      >
-                        <Github size={20} />
-                      </motion.a>
+                  </>
+                ) : (
+                  <>
+                    {project.image && (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                    )}
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                          {project.category}
+                        </span>
+                        <div className="flex space-x-3">
+                          <motion.a
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1 }}
+                            className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+                          >
+                            <ExternalLink size={18} />
+                          </motion.a>
+                          <motion.a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1 }}
+                            className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                          >
+                            {project.icon ? (
+                              <project.icon size={18} />
+                            ) : (
+                              <Github size={18} />
+                            )}
+                          </motion.a>
+                        </div>
+                      </div>
                     </div>
+                  </>
+                )}
+                {project.featured && (
+                  <div className="absolute top-4 left-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    Featured
                   </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                      {project.category}
-                    </span>
-                    <div className="flex space-x-3">
-                      <motion.a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                      >
-                        <ExternalLink size={18} />
-                      </motion.a>
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-                      >
-                        <Github size={18} />
-                      </motion.a>
-                    </div>
-                  </div>
-                </div>
+                )}
               </motion.div>
             ))}
           </motion.div>
