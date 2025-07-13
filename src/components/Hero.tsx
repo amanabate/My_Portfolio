@@ -121,14 +121,17 @@ const Hero = () => {
               Get In Touch
             </motion.a>
 
-            <motion.button
+            <motion.a
+              href="https://flowcv.com/resume/cguh7jrs1u"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors flex items-center gap-2"
             >
               <Download size={20} />
               Resume
-            </motion.button>
+            </motion.a>
           </div>
         </motion.div>
       </div>

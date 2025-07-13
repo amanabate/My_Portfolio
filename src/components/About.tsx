@@ -4,14 +4,21 @@ import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Users, Award, BookOpen } from 'lucide-react';
 
 const About = () => {
-  const skills = [
-    { name: 'JavaScript/TypeScript', level: 95, color: 'from-yellow-400 to-orange-500' },
-    { name: 'React/Next.js', level: 90, color: 'from-blue-400 to-blue-600' },
-    { name: 'Tailwind CSS', level: 92, color: 'from-cyan-400 to-teal-500' },
+  const programmingLanguages = [
+    { name: 'Python', level: 85, color: 'from-blue-400 to-blue-600' },
+    { name: 'C++', level: 80, color: 'from-gray-500 to-gray-700' },
+    { name: 'JavaScript', level: 95, color: 'from-yellow-400 to-orange-500' },
+    { name: 'Java', level: 82, color: 'from-red-400 to-red-600' },
+  ];
+  const frameworksLibraries = [
+    { name: 'React', level: 90, color: 'from-blue-400 to-blue-600' },
     { name: 'Node.js', level: 80, color: 'from-green-400 to-emerald-500' },
-    { name: 'UI/UX Design', level: 85, color: 'from-purple-400 to-pink-500' },
-    { name: 'Git/GitHub', level: 88, color: 'from-gray-400 to-gray-600' },
-    { name: 'MySQL', level: 75, color: 'from-blue-300 to-blue-500' }, // Added MySQL
+    { name: 'Tailwind CSS', level: 92, color: 'from-cyan-400 to-teal-500' },
+    { name: 'Express.js', level: 78, color: 'from-green-300 to-green-500' },
+  ];
+  const databases = [
+    { name: 'MongoDB', level: 80, color: 'from-green-500 to-green-700' },
+    { name: 'MySQL', level: 75, color: 'from-blue-300 to-blue-500' },
   ];
 
   const highlights = [
@@ -98,23 +105,68 @@ const About = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Technical Skills
             </h3>
-            {skills.map((skill, index) => (
-              <div key={skill.name}>
-                <div className="flex justify-between mb-2">
-                  <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
-                  <span className="text-gray-500 dark:text-gray-400">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    className={`h-3 rounded-full bg-gradient-to-r ${skill.color}`}
-                  />
-                </div>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Programming Languages</h4>
+                {programmingLanguages.map((skill, index) => (
+                  <div key={skill.name} className="mb-2">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
+                      <span className="text-gray-500 dark:text-gray-400">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                        className={`h-3 rounded-full bg-gradient-to-r ${skill.color}`}
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Frameworks/Libraries</h4>
+                {frameworksLibraries.map((skill, index) => (
+                  <div key={skill.name} className="mb-2">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
+                      <span className="text-gray-500 dark:text-gray-400">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                        className={`h-3 rounded-full bg-gradient-to-r ${skill.color}`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Databases</h4>
+                {databases.map((skill, index) => (
+                  <div key={skill.name} className="mb-2">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-gray-700 dark:text-gray-300 font-medium">{skill.name}</span>
+                      <span className="text-gray-500 dark:text-gray-400">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                        className={`h-3 rounded-full bg-gradient-to-r ${skill.color}`}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
 

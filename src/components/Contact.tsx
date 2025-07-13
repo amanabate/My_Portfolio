@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,31 +24,47 @@ const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Prepare the template params
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    try {
+      await emailjs.send(
+        'YOUR_SERVICE_ID',      // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID',     // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_USER_ID'          // Replace with your EmailJS public key (user ID)
+      );
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setStatus('idle'), 3000);
-    }, 1000);
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      value: 'emmanuel.abate@email.com',
-      href: 'mailto:emmanuel.abate@email.com',
+      value: 'emmanuellaabate@gmail.com',
+      href: 'mailto:emmanuellaabate@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+251919512566',
+      href: 'tel:+251919512566',
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Ethiopia, Addis Ababa',
       href: '#',
     },
   ];

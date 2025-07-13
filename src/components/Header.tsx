@@ -65,7 +65,7 @@ const Header = () => {
             
             <div className="flex items-center space-x-4">
               <motion.a
-                href="https://github.com/amanabate/My_Portfolio"
+                href="https://github.com/amanabate"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
@@ -74,7 +74,7 @@ const Header = () => {
                 <Github size={20} />
               </motion.a>
               <motion.a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/amanuel-abate-806093327/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
@@ -126,10 +126,10 @@ const Header = () => {
                   </a>
                 ))}
                 <div className="flex items-center space-x-4 px-3 py-2">
-                  <a href="https://github.com/amanabate/My_Portfolio" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/amanabate" target="_blank" rel="noopener noreferrer">
                     <Github size={20} className="text-gray-700 dark:text-gray-300" />
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/amanuel-abate-806093327/" target="_blank" rel="noopener noreferrer">
                     <Linkedin size={20} className="text-gray-700 dark:text-gray-300" />
                   </a>
                   <button
