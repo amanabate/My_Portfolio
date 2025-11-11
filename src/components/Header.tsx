@@ -44,10 +44,16 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent"
+            whileHover={{ scale: 1.02 }}
+            className="flex items-center gap-2"
           >
-            Emmanuel
+            <a href="#home" className="flex items-center gap-2 overflow-hidden">
+              <img
+                src="src/images/mylogo.png"
+                alt="Amanuel Logo"
+                className="h-8 w-auto sm:h-9 object-contain select-none"
+              />
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}

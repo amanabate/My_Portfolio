@@ -26,7 +26,7 @@ const Hero = () => {
   }, [currentTitleIndex]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-24 sm:pt-28 lg:pt-32">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -57,7 +57,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-2 sm:px-3 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Copy and actions */}
           <motion.div
@@ -85,8 +85,9 @@ const Hero = () => {
             </div>
 
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl lg:max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-12 leading-relaxed">
-              I craft beautiful, responsive, and user-centered web experiences with modern technologies. 
-              Passionate about clean code, innovative design, and turning ideas into digital reality.
+            As a Software Engineer, I design and build innovative, user-centered software solutions that are both scalable and efficient.
+            I bridge the gap between technology and user needs. Passionate about clean code, modern design, and transforming ideas into impactful digital realities,
+             I strive to create software that is as elegant as it is functional.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center">
@@ -134,7 +135,7 @@ const Hero = () => {
               <div className="absolute inset-0 rounded-full overflow-hidden ring-2 ring-amber-500/60 bg-gray-900">
                 <img
                   src="https://avatars.githubusercontent.com/u/129896984?s=400&u=3f5f2b89be965494c9deca917d6c79533305a5f6&v=4"
-                  alt="Emmanuel Abate Profile"
+                  alt="Amanuel Abate Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
