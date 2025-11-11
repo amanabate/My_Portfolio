@@ -5,20 +5,20 @@ import { Code, Palette, Zap, Users, Award, BookOpen } from 'lucide-react';
 
 const About = () => {
   const programmingLanguages = [
-    { name: 'Python', level: 85, color: 'from-blue-400 to-blue-600' },
+    { name: 'Python', level: 85, color: 'from-amber-400 to-orange-600' },
     { name: 'C++', level: 80, color: 'from-gray-500 to-gray-700' },
-    { name: 'JavaScript', level: 95, color: 'from-yellow-400 to-orange-500' },
+    { name: 'JavaScript', level: 95, color: 'from-amber-400 to-orange-600' },
     { name: 'Java', level: 82, color: 'from-red-400 to-red-600' },
   ];
   const frameworksLibraries = [
-    { name: 'React', level: 90, color: 'from-blue-400 to-blue-600' },
+    { name: 'React', level: 90, color: 'from-amber-400 to-orange-600' },
     { name: 'Node.js', level: 80, color: 'from-green-400 to-emerald-500' },
     { name: 'Tailwind CSS', level: 92, color: 'from-cyan-400 to-teal-500' },
     { name: 'Express.js', level: 78, color: 'from-green-300 to-green-500' },
   ];
   const databases = [
     { name: 'MongoDB', level: 80, color: 'from-green-500 to-green-700' },
-    { name: 'MySQL', level: 75, color: 'from-blue-300 to-blue-500' },
+    { name: 'MySQL', level: 75, color: 'from-amber-300 to-amber-500' },
   ];
 
   const highlights = [
@@ -55,7 +55,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-12 lg:py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -188,7 +188,7 @@ const About = () => {
                 whileHover={{ y: -5 }}
                 className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
                   <Icon className="text-white" size={24} />
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
