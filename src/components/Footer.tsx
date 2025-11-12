@@ -28,7 +28,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="text-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent mb-4"
             >
-              Emmanuel Abate
+              Amanuel Abate
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -127,7 +127,7 @@ const Footer = () => {
           className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center"
         >
           <p className="text-gray-400 text-sm flex items-center gap-1">
-            © 2024 Emmanuel Abate. Made with <Heart size={16} className="text-red-500" /> and lots of coffee.
+            © 2024 Amanuel Abate. Made with <Heart size={16} className="text-red-500" /> and lots of coffee.
           </p>
           
           <motion.button

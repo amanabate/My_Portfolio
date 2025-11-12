@@ -47,13 +47,19 @@ const Header = () => {
             whileHover={{ scale: 1.02 }}
             className="flex items-center gap-2"
           >
-            <a href="#home" className="flex items-center gap-2 overflow-hidden">
+            {/* <a href="#home" className="flex items-center gap-2 overflow-hidden">
               <img
                 src="src/images/mylogo.png"
                 alt="Amanuel Logo"
                 className="h-8 w-auto sm:h-9 object-contain select-none"
               />
-            </a>
+            </a> */}
+
+<span className="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent font-extrabold text-3xl tracking-wide">
+  Amanuel Abate
+</span>
+
+
           </motion.div>
 
           {/* Desktop Navigation */}
